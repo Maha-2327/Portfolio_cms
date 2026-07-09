@@ -46,17 +46,9 @@ portfolio-cms/
 ```bash
 cd backend
 npm install
-cp .env.example .env
 ```
 
-Edit `.env` and fill in:
-- `MONGO_URI` — your MongoDB connection string
-- `JWT_SECRET` — any long random string
-- `ADMIN_USERNAME` / `ADMIN_EMAIL` / `ADMIN_PASSWORD` — your first admin login
-- `EMAIL_USER` / `EMAIL_PASS` — optional, for contact-form email notifications
-  (use a [Gmail App Password](https://myaccount.google.com/apppasswords), not your real password)
-
-Create your admin user and sample projects:
+Create admin user and sample projects:
 ```bash
 npm run seed
 ```
@@ -72,7 +64,6 @@ The API runs on `http://localhost:5000`.
 ```bash
 cd frontend
 npm install
-cp .env.example .env
 npm run dev
 ```
 The site runs on `http://localhost:5173`.
@@ -83,18 +74,4 @@ Go to `http://localhost:5173/admin/login` and sign in with the `ADMIN_USERNAME` 
 `ADMIN_PASSWORD` you set in `backend/.env`. From there you can add/edit/delete projects
 and view contact messages.
 
-## Deploying (free-tier friendly)
 
-- **Frontend:** [Vercel](https://vercel.com) or [Netlify](https://netlify.com) — connect your repo, set `VITE_API_URL` to your deployed backend URL
-- **Backend:** [Render](https://render.com) or [Railway](https://railway.app) — connect your repo, set the same environment variables from `.env.example`
-- **Database:** [MongoDB Atlas](https://www.mongodb.com/atlas) free tier
-
-After deploying, update `CLIENT_URL` in the backend `.env` to your live frontend URL (for CORS),
-and `VITE_API_URL` in the frontend to your live backend URL.
-
-## Notes on scope
-
-This covers the full CMS + auth + API requirement set. Image upload (Cloudinary), a rich-text
-blog editor, and draft/publish UI for blogs are set up on the backend (`Blog` model + routes) but
-don't yet have a frontend admin UI — a natural "Phase 2" if you want to keep building after
-submission.
