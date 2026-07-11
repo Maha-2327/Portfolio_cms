@@ -39,7 +39,7 @@ portfolio-cms/
 
 ### 1. Prerequisites
 - Node.js 18+
-- A MongoDB database — either local (`mongod`) or a free [MongoDB Atlas](https://www.mongodb.com/atlas) cluster
+- A MongoDB database — [MongoDB Atlas](https://www.mongodb.com/atlas) cluster
 
 ### 2. Backend setup
 
